@@ -1,0 +1,22 @@
+.header {
+    background: #FFFFFF;
+}
+  
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    text-align: center;
+}
+  
+.header__title {
+    color: #8B7969;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.inika-regular {
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+}
