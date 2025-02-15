@@ -31,6 +31,13 @@
     height: 40px;
 }
 
+.form__group--last {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: max-content;
+}
+
 .form__group-title--required {
     margin-left: 5px;
     color: #FF9494;
@@ -120,7 +127,6 @@
 }
 
 .form__button {
-    margin-top: 30px;
     text-align: center;
 }
   

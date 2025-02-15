@@ -98,11 +98,14 @@
 					<div class="form__group-input--select">
 						<select name="category_id">
 							<option value="" disabled selected hidden>選択してください</option>
+							@foreach($categories as $category)
+							<option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+							@endforeach
 						</select>
 					</div>
 				</div>
 			</div>
-			<div class="form__group">
+			<div class="form__group--last">
 				<div class="form__group-title">
 					<span class="form__group-title--label">お問合せの種類</span>
 					<span class="form__group-title--required">※</span>
