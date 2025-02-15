@@ -9,14 +9,14 @@
 <div class="about">
 	<div class="about__inner">
 		<h2 class="about__text inika-regular">
-			FashionablyLate
+			Contact
 		</h2>
 	</div>
 </div>
 
 <div class="contact-form">
 	<div class="contact-form__inner">
-		<form class="form" action="/confirm" method="post">
+		<form class="form inika-regular" action="/confirm" method="post">
 			@csrf
 			<div class="form__group">
 				<div class="form__group-title">
@@ -25,7 +25,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text">
-						<input type="text" placeholder=":テスト太郎"/>
+						<input type="text" placeholder="例:テスト太郎"/>
 					</div>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text">
-						<input type="text" placeholder=":090-1234-5678"/>
+						<input type="text" placeholder="090-1234-5678"/>
 					</div>
 				</div>
 			</div>
@@ -105,11 +105,14 @@
 					<span class="form__group-title--required">※</span>
 				</div>
 				<div class="form__group-input">
-					<div class="form__group-input--textarea">
-						<textarea cols="30" rows="4" placeholder="お問い合わせ内容をご記載ください"></textarea>
+					<div class="form__group-input--text">
+						<textarea cols="30" rows="6" placeholder="お問い合わせ内容をご記載ください"></textarea>
 					</div>
 				</div>
 			</div>
+			<div class="form__button">
+        <button class="form__button-submit" type="submit">確認画面</button>
+      </div>
 		</form>
 	</div>
 </div>

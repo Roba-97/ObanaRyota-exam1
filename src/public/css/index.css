@@ -1,11 +1,12 @@
 .about__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
+    margin: 15px auto;
+    padding: 15px;
     max-width: 1230px;
     text-align: center;
 }
   
-.about__title {
+.about__text {
+    margin: 0 auto;
     color: #8B7969;
     text-decoration: none;
     font-size: 35px;
@@ -19,17 +20,57 @@
 
 .form {
     margin: 0 auto;
-    width: 80%;
+    width: 65%;
     color: #8B7969;
 }
 
 .form__group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    height: 40px;
 }
 
 .form__group-title--required {
     margin-left: 5px;
     color: #FF9494;
+}
+
+.form__group-title {
+    width:33%;
+    line-height: 40px;
+}
+
+.form__group-input {
+    width:66%;
+    line-height: 40px;
+}
+
+.form__group-input--text input {
+    width: 95%;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+    line-height: 32px;
+}
+
+.form__group-input--text textarea{
+    width: 95%;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+}
+
+.form__button {
+    margin-top: 30px;
+    text-align: center;
+}
+  
+.form__button-submit {
+    padding: 10px 20px;
+    height: 40px;
+    border: none;
+    background: #8B7969;
+    color: #fff;
+    cursor: pointer;
 }
