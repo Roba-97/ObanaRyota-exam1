@@ -24,8 +24,9 @@
 					<span class="form__group-title--required">※</span>
 				</div>
 				<div class="form__group-input">
-					<div class="form__group-input--text">
-						<input type="text" placeholder="例:テスト太郎"/>
+					<div class="form__group-input--text-two">
+						<input type="text" name="last_name" placeholder="例:山田"/>
+						<input type="text" name="first_name" placeholder="例:太郎"/>
 					</div>
 				</div>
 			</div>
@@ -36,9 +37,9 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--radio">
-						<input type="radio"/><label>男</label>
-						<input type="radio"/><label>女</label>
-						<input type="radio"/><label>その他</label>
+						<input type="radio" id="male" name="gender" value="1"/><label for="male">男性</label>
+						<input type="radio" id="female" name="gender" value="2"/><label for="female">女性</label>
+						<input type="radio" id="other" name="gender" value="3"/><label for="other">その他</label>
 					</div>
 				</div>
 			</div>
@@ -49,7 +50,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text">
-						<input type="text" placeholder="例:test@example.com"/>
+						<input type="text" name="email" placeholder="例:test@example.com"/>
 					</div>
 				</div>
 			</div>
@@ -59,8 +60,10 @@
 					<span class="form__group-title--required">※</span>
 				</div>
 				<div class="form__group-input">
-					<div class="form__group-input--text">
-						<input type="text" placeholder="090-1234-5678"/>
+					<div class="form__group-input--text-three">
+						<input type="text" name="tel-1" placeholder="080"/><span>-</span>
+						<input type="text" name="tel-2" placeholder="1234"/><span>-</span>
+						<input type="text" name="tel-3" placeholder="5678"/>
 					</div>
 				</div>
 			</div>
@@ -71,7 +74,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text">
-						<input type="text" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3"/>
+						<input type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3"/>
 					</div>
 				</div>
 			</div>
@@ -82,7 +85,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text">
-						<input type="text" placeholder="例:千駄ヶ谷マンション101"/>
+						<input type="text" name="building" placeholder="例:千駄ヶ谷マンション101"/>
 					</div>
 				</div>
 			</div>
@@ -93,7 +96,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--select">
-						<select>
+						<select name="category_id">
 							<option value="" disabled selected hidden>選択してください</option>
 						</select>
 					</div>
@@ -106,7 +109,7 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text">
-						<textarea cols="30" rows="6" placeholder="お問い合わせ内容をご記載ください"></textarea>
+						<textarea name="detail" cols="30" rows="6" placeholder="お問い合わせ内容をご記載ください"></textarea>
 					</div>
 				</div>
 			</div>

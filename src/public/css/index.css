@@ -54,11 +54,69 @@
     line-height: 32px;
 }
 
+.form__group-input--text-two, .form__group-input--text-three {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.form__group-input--text-two input {
+    width: 47.5%;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+    line-height: 32px;
+}
+
+.form__group-input--text-three input {
+    width: 28%;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+    line-height: 32px;
+} 
+
+.form__group-input--text-three span {
+    line-height: 32px;
+}
+
+.form__group-input--text input::placeholder,
+.form__group-input--text-two input::placeholder {
+    padding-left: 20px;
+    color: #8B7969;
+}
+
+.form__group-input--text-three input::placeholder {
+    text-align: center;
+    color: #8B7969;
+}
+
+.form__group-input--radio label{
+    margin-right: 30px;
+    margin-left: 5px;
+}
+
+.form__group-input--select select {
+    width: 50%;
+    color: #8B7969;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+    height: 32px;
+}
+
+
 .form__group-input--text textarea{
     width: 95%;
     background-color: #eeeeee;
     border: none;
     outline: none;
+}
+
+.form__group-input--text textarea::placeholder {
+    padding-top: 10px;
+    padding-left: 20px;
+    color: #8B7969;
 }
 
 .form__button {
