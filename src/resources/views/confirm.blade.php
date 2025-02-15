@@ -17,6 +17,7 @@
 <div class="confirm-content">
 	<div class="confirm-content__inner">
 		<form action="/thanks" method="post">
+			@csrf
 			<table class="confirm-table inika-regular">
 				<tr class="confirm-table__row">
 					<th class="confirm-table__header">お名前</th>
