@@ -25,6 +25,7 @@
 
 .confirm-table__row {
     border: solid 1px #E0DFDE;
+    height: auto;
 }
 
 .confirm-table__header {
@@ -37,12 +38,11 @@
 }
 
 .confirm-table__text {
-    padding: 15px;
     width: 66%;
     background-color: #FFFFFF;
     color: #8B7969;
+    padding-left: 30px;
 }
-
 
 .form__button {
     margin-top: 40px;
