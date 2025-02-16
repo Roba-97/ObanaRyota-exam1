@@ -18,7 +18,7 @@
 	<div class="contact-form__inner">
 		<form class="form inika-regular" action="/confirm" method="post">
 			@csrf
-			<div class="form__group">
+			<div class="form__group form__group--first">
 				<div class="form__group-title">
 					<span class="form__group-title--label">お名前</span>
 					<span class="form__group-title--required">※</span>
@@ -30,6 +30,21 @@
 					</div>
 				</div>
 			</div>
+			@if ($errors->has('last_name') || $errors->has('first_name'))
+    	<div class="form__error">
+        <div class="form__error-void"></div>
+				<div class="form__error-massage">
+					<div class="form__error-massage--name">
+						@if ($errors->has('last_name'))
+							<span>{{ $errors->first('last_name') }}</span>
+						@endif
+						@if ($errors->has('first_name'))
+							<span>{{ $errors->first('first_name') }}</span>
+						@endif
+					</div>
+				</div>
+			</div>
+			@endif
 			<div class="form__group">
 				<div class="form__group-title">
 					<span class="form__group-title--label">性別</span>
@@ -37,12 +52,18 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--radio">
-						<input type="radio" id="male" name="gender" value="1"/><label for="male">男性</label>
+						<input type="radio" id="male" name="gender" value="1" checked/><label for="male">男性</label>
 						<input type="radio" id="female" name="gender" value="2"/><label for="female">女性</label>
 						<input type="radio" id="other" name="gender" value="3"/><label for="other">その他</label>
 					</div>
 				</div>
 			</div>
+			@error('gender')
+			<div class="form__error">
+        <div class="form__error-void"></div>
+				<div class="form__error-massage">{{ $message }}</div>
+			</div>
+			@enderror
 			<div class="form__group">
 				<div class="form__group-title">
 					<span class="form__group-title--label">メールアドレス</span>
@@ -54,6 +75,12 @@
 					</div>
 				</div>
 			</div>
+			@error('email')
+			<div class="form__error">
+        <div class="form__error-void"></div>
+				<div class="form__error-massage">{{ $message }}</div>
+			</div>
+			@enderror
 			<div class="form__group">
 				<div class="form__group-title">
 					<span class="form__group-title--label">電話番号</span>
@@ -61,12 +88,21 @@
 				</div>
 				<div class="form__group-input">
 					<div class="form__group-input--text-three">
-						<input type="text" name="tel-1" placeholder="080"/><span>-</span>
-						<input type="text" name="tel-2" placeholder="1234"/><span>-</span>
-						<input type="text" name="tel-3" placeholder="5678"/>
+						<input type="tel" name="tel-1" placeholder="080"/><span>-</span>
+						<input type="tel" name="tel-2" placeholder="1234"/><span>-</span>
+						<input type="tel" name="tel-3" placeholder="5678"/>
 					</div>
 				</div>
 			</div>
+			@foreach (['tel-1', 'tel-2', 'tel-3'] as $tel)
+				@error($tel)
+					<div class="form__error">
+        		<div class="form__error-void"></div>
+						<div class="form__error-massage">{{ $message }}</div>
+					</div>
+					@break
+				@enderror
+			@endforeach
 			<div class="form__group">
 				<div class="form__group-title">
 					<span class="form__group-title--label">住所</span>
@@ -78,6 +114,12 @@
 					</div>
 				</div>
 			</div>
+			@error('address')
+			<div class="form__error">
+        <div class="form__error-void"></div>
+				<div class="form__error-massage">{{ $message }}</div>
+			</div>
+			@enderror
 			<div class="form__group">
 				<div class="form__group-title">
 					<span class="form__group-title--label">建物名</span>
@@ -104,17 +146,29 @@
 					</div>
 				</div>
 			</div>
-			<div class="form__group--last">
+			@error('category_id')
+			<div class="form__error">
+        <div class="form__error-void"></div>
+				<div class="form__error-massage">{{ $message }}</div>
+			</div>
+			@enderror
+			<div class="form__group form__group--last">
 				<div class="form__group-title">
 					<span class="form__group-title--label">お問合せの種類</span>
 					<span class="form__group-title--required">※</span>
 				</div>
-				<div class="form__group-input">
+				<div class="form__group-input--last">
 					<div class="form__group-input--text">
 						<textarea name="detail" cols="30" rows="6" placeholder="お問い合わせ内容をご記載ください"></textarea>
 					</div>
 				</div>
 			</div>
+			@error('detail')
+			<div class="form__error">
+        <div class="form__error-void"></div>
+				<div class="form__error-massage">{{ $message }}</div>
+			</div>
+			@enderror
 			<div class="form__button">
         <button class="form__button-submit" type="submit">確認画面</button>
       </div>

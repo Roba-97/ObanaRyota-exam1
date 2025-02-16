@@ -27,15 +27,17 @@
 .form__group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-top: 20px;
     height: 40px;
 }
 
+.form__group--first {
+    margin-top: 0px;
+}
+
 .form__group--last {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    height: max-content;
+    height: auto;
+    align-items: stretch;
 }
 
 .form__group-title--required {
@@ -51,6 +53,10 @@
 .form__group-input {
     width:66%;
     line-height: 40px;
+}
+
+.form__group-input--last {
+    width:66%;
 }
 
 .form__group-input--text input {
@@ -118,6 +124,8 @@
     background-color: #eeeeee;
     border: none;
     outline: none;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .form__group-input--text textarea::placeholder {
@@ -128,6 +136,7 @@
 
 .form__button {
     text-align: center;
+    margin-top: 20px;
 }
   
 .form__button-submit {
@@ -137,4 +146,31 @@
     background: #8B7969;
     color: #fff;
     cursor: pointer;
+}
+
+.form__error {
+    display: flex;
+}
+
+.form__error-void {
+    width:33%;
+}
+
+.form__error-massage {
+    padding-left: 20px;
+    color: #FF9494;
+    width: 66%;
+    font-size: 12px;
+}
+
+.form__error-massage--name {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.form__error-massage--name span {
+    display: inline-block;
+    width: 47.5%;
+    padding-left: 20px;
 }

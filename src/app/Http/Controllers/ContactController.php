@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use App\Http\Requests\ContactRequest;
+
 use App\Models\Contact;
 use App\Models\Category;
 
@@ -16,7 +19,7 @@ class ContactController extends Controller
       return view('index', compact('categories'));
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
       $contact = $request->all();
 
