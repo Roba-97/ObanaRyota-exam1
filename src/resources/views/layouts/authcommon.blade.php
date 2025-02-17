@@ -20,7 +20,15 @@
       <h1 class="header__title inika-regular">
         FashionablyLate
       </h1>
-      <a class="header__button inika-regular" href="/@yield('action')">@yield('action')</a>
+      @if(Auth::check())
+        <form class="header__button" action="/logout" method="post">
+          @csrf
+          <button class="header__button--loguot inika-regular"type="submit">logout</buttpm>
+        </form>
+      @endif
+      @if(!Auth::check())
+        <a class="header__button inika-regular" href="/@yield('action')">@yield('action')</a>
+      @endif
     </div>
   </header>
 

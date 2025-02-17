@@ -32,6 +32,13 @@
     text-decoration: none; 
 }
 
+.header__button--loguot {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
 .inika-regular {
     font-family: "Inika", serif;
     font-weight: 400;
