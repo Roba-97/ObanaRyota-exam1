@@ -14,14 +14,13 @@
 
 .admin-content {
     margin: 15px auto;
-    padding: 15px;
+    padding: 15px 45px;
     max-width: 1230px;
 }
 
 .admin-search, .admin-links, .admin-table {
-    margin: 0px auto;
+    margin: 0px;
     padding: 10px 0;
-    width: 90%;
 }
 
 .admin-search__form {
@@ -76,6 +75,22 @@
     white-space: nowrap;
 }
 
+.admin-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-links__export, .admin-links__paginate {
+    padding: 10px 0;
+}
+
+.admin-links__export-button button {
+    padding: 5px 20px;
+    border: none;
+    background: #E1DBD699;
+    color: #8B7969;
+    cursor: pointer;
+}
 
 .admin-table__inner {
     width: 100%;

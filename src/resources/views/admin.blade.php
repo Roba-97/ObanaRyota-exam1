@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+<link rel="stylesheet" href="{{ asset('css/paginate.css') }}">
 @endsection
 
 @section('content')
@@ -48,7 +49,12 @@
 		</from>
 	</div>
 
-	<div class="admin-links"></div>
+	<div class="admin-links">		
+		<div class="admin-links__export">
+			<form class="admin-links__export-button" action=""><button>エクスポート</button></form>
+		</div>
+		<div class="admin-links__paginate">{{ $contacts->links() }}</div>
+	</div>
 
 	<div class="admin-tabler">
 		<table class="admin-table__inner">
