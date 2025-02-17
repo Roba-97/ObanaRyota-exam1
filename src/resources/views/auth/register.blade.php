@@ -20,7 +20,8 @@ login
 
 	<div class="register-form">
 		<div class="register-form__inner">
-			<form class="" action="/register" method="post">
+			<form  action="/register" method="post">
+				@csrf
 				<div class="form__group">
 					<div class="form__group-title">お名前</div>
 					<div class="form__group-input">

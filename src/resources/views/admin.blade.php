@@ -9,5 +9,8 @@ logout
 @endsection
 
 @section('content')
-
+<form action="/logout" method="post">
+    @csrf
+    <button type="submit">ログアウト</buttpm>
+</form>
 @endsection

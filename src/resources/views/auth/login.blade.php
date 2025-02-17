@@ -21,6 +21,7 @@ register
 	<div class="login-form">
 		<div class="login-form__inner">
 			<form class="" action="/login" method="post">
+				@csrf
 				<div class="form__group">
 					<div class="form__group-title">メールアドレス</div>
 					<div class="form__group-input">
