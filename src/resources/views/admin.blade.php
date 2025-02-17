@@ -14,6 +14,7 @@
 </div>
 
 <div class="admin-content">
+
 	<div class="admin-search">
 		<from class="admin-search__form" action="/admin/search" method="post">
 			<div class="admin-search__from-text">
@@ -58,17 +59,32 @@
 				<th class="admin-table__header">お問い合わせの種類</th>
 				<th class="admin-table__header"></th>
 			</tr>
+			@foreach($contacts as $contact)
 			<tr class="admin-table__row">
-				<td class="admin-table__text">山田太郎</td>
-				<td class="admin-table__text">男</td>
-				<td class="admin-table__text">サンプルメール</td>
-				<td class="admin-table__text">サンプル種類</td>
+				<td class="admin-table__text">{{ $contact['last_name']."　".$contact['first_name']}}</td>
+				<td class="admin-table__text">
+					@switch( $contact['gender'] )
+						@case(1)
+							男性
+							@break
+						@case(2)
+							女性
+							@break
+						@case(3)
+							その他
+							@break
+						@default
+					@endswitch
+				</td>
+				<td class="admin-table__text">{{ $contact['email'] }}</td>
+				<td class="admin-table__text">{{ $contact->category->content }}</td>
 				<td class="admin-table__text">
 					<form class="detail-button" action="/admin/modal" method="post">
-						<button>詳細</button>
+						<button type="submit">詳細</button>
 					</form>
 				</td>
 			</tr>
+			@endforeach
 		</table>
 	</div>
 </div>

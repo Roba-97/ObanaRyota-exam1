@@ -12,8 +12,10 @@ class AuthController extends Controller
     //
     public function index()
     {
+        $contacts = Contact::with('category')->paginate(7);        
+        //dd($contacts);
         $categories = Category::all();
 
-        return view('admin', compact('categories'));
+        return view('admin', compact('contacts', 'categories'));
     }
 }
