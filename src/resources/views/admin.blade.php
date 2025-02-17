@@ -48,19 +48,26 @@
 	</div>
 
 	<div class="admin-links"></div>
-	<div class="admin-table">
+
+	<div class="admin-tabler">
 		<table class="admin-table__inner">
 			<tr class="admin-table__row">
 				<th class="admin-table__header">お名前</th>
 				<th class="admin-table__header">性別</th>
 				<th class="admin-table__header">メールアドレス</th>
 				<th class="admin-table__header">お問い合わせの種類</th>
+				<th class="admin-table__header"></th>
 			</tr>
 			<tr class="admin-table__row">
 				<td class="admin-table__text">山田太郎</td>
 				<td class="admin-table__text">男</td>
 				<td class="admin-table__text">サンプルメール</td>
 				<td class="admin-table__text">サンプル種類</td>
+				<td class="admin-table__text">
+					<form class="detail-button" action="/admin/modal" method="post">
+						<button>詳細</button>
+					</form>
+				</td>
 			</tr>
 		</table>
 	</div>
