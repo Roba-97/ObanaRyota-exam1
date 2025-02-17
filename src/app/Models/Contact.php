@@ -15,10 +15,19 @@ class Contact extends Model
         return $this->belongsTo('App\Models\Category');
     }
 
+    // last_name, first_name, emailで$keywordとの完全一致または部分一致で検索
+    // last_nameとfirst_nameは別カラムのため、フルネームへの一致検索は現状不可
     public function scopeKeywordSearch($query, $keyword)
     {
         if (!empty($keyword)) {
-            $query->where('email', 'like', '%' . $keyword . '%');
+            $query->where(function($query) use ($keyword) {
+                $query->where('last_name', '=', $keyword)
+                      ->orWhere('last_name', 'like', '%' . $keyword . '%')
+                      ->orWhere('first_name', '=', $keyword)
+                      ->orWhere('first_name', 'like', '%' . $keyword . '%')
+                      ->orWhere('email', '=', $keyword)
+                      ->orWhere('email', 'like', '%' . $keyword . '%');
+            });
         }
     }
 

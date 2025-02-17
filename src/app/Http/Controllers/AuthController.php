@@ -21,7 +21,6 @@ class AuthController extends Controller
 
     public function search(Request $request) 
     {
-        //dd($request);
         $contacts = 
         Contact::with('category')
         ->keywordSearch($request->keyword)
