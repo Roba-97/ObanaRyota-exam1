@@ -18,4 +18,21 @@ class AuthController extends Controller
 
         return view('admin', compact('contacts', 'categories'));
     }
+
+    public function search(Request $request) 
+    {
+        //dd($request);
+        $contacts = 
+        Contact::with('category')
+        ->keywordSearch($request->keyword)
+        ->genderSearch($request->gender)
+        ->categorySearch($request->category_id)
+        ->dateSearch($request->date)
+        ->paginate(7);
+        //ローカルスコープをつなげて検索、最後にページネーション
+
+        $categories = Category::all();
+
+        return view('admin', compact('contacts', 'categories'));
+    }
 }

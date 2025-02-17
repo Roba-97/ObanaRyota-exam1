@@ -17,13 +17,15 @@
 <div class="admin-content">
 
 	<div class="admin-search">
-		<from class="admin-search__form" action="/admin/search" method="post">
+		<form class="admin-search__form" action="/admin/search" method="get">
+			@csrf
 			<div class="admin-search__from-text">
 				<input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" size="20">
 			</div>
 			<div class="admin-search__form-select">
 				<select name="gender" >
 					<option value="" disabled selected hidden>性別</option>
+					<option value="0">全て</option>
 					<option value="1">男</option>
 					<option value="2">女</option>
 					<option value="3">その他</option>
@@ -38,15 +40,15 @@
 				</select>
 			</div>
 			<div class="admin-search__form-date">
-				<input type="date">
+				<input type="date" name="date">
 			</div>
 			<div class="admin-search__form-button">
-				<button class="admin-search__form-button--submit" type="submit">検索</button>
+				<button  class="admin-search__form-button--submit" type="submit">検索</button>
 			</div>
 			<div class="admin-search__form-button">
 				<a class="admin-search__form-button--reset" href="/admin">リセット</a>
 			</div>
-		</from>
+		</form>
 	</div>
 
 	<div class="admin-links">		
