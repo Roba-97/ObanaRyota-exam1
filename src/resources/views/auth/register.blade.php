@@ -27,18 +27,28 @@ login
 					<div class="form__group-input">
 						<input type="text" name="name" value="{{ old('name') }}" placeholder="例:山田　太郎"/>
 					</div>
+					@error('name')
+					<div class="form__group-error">{{ $message }}</div>
+					@enderror
 				</div>
 				<div class="form__group">
 					<div class="form__group-title">メールアドレス</div>
 					<div class="form__group-input">
 						<input type="text" name="email" value="{{ old('email') }}" placeholder="例:test@example.com"/>
 					</div>
+					@error('email')
+					<div class="form__group-error">{{ $message }}</div>
+					@enderror
 				</div>
+
 				<div class="form__group">
 					<div class="form__group-title">パスワード</div>
 					<div class="form__group-input">
 						<input type="password" name="password" placeholder="例:coachtech1106"/>
 					</div>
+					@error('password')
+					<div class="form__group-error">{{ $message }}</div>
+					@enderror
 				</div>
 				<div class="form__button">
 					<button class="form__button-submit" type="submit">登録</button>

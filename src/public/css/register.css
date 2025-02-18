@@ -1,7 +1,6 @@
 .content-wrapper {
     margin: 0px auto;
     max-width: 1230px;
-    height: 100vh;
     background-color: rgba(217, 198, 181, 0.6);
 };
 
@@ -60,3 +59,12 @@
     color: #fff;
     cursor: pointer;
 }
+
+.form__group-error {
+    margin: 0 auto;
+    text-align: left;
+    width: 75%;
+    color: #FF9494;
+    font-size: 12px;
+}
+

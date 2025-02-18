@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CustomizedRegisterUserController;
+use App\Http\Controllers\CustomizedAuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'index']);
     Route::get('/admin/search', [AuthController::class, 'search']);
 });
+
+Route::post('/register',[CustomizedRegisterUserController::class,'store']);
+Route::post('/login',[CustomizedAuthenticatedSessionController::class,'store']);
+Route::post('/logout',[CustomizedAuthenticatedSessionController::class,'destroy']);
