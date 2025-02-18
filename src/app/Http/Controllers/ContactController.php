@@ -22,7 +22,7 @@ class ContactController extends Controller
     public function confirm(ContactRequest $request)
     {
       $contact = $request->all();
-	  $category = Category::find($request->category_id);
+	    $category = Category::find($request->category_id);
 
       // 番号の作り直し
       $tel = $contact['tel-1'].$contact['tel-2'].$contact['tel-3'];
@@ -36,7 +36,7 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-	  Contact::create($request->all());
+	    Contact::create($request->all());
       return view('thanks');
     }
 }
