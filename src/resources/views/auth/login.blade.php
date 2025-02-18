@@ -13,7 +13,7 @@ register
 	<div class="about">
 		<div class="about__inner">
 			<h2 class="about__text inika-regular">
-				login
+				Login
 			</h2>
 		</div>
 	</div>

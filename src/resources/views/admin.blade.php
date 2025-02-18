@@ -26,8 +26,8 @@
 				<select name="gender" >
 					<option value="" disabled selected hidden>性別</option>
 					<option value="0">全て</option>
-					<option value="1">男</option>
-					<option value="2">女</option>
+					<option value="1">男性</option>
+					<option value="2">女性</option>
 					<option value="3">その他</option>
 				</select>
 			</div>
