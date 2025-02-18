@@ -1,0 +1,68 @@
+.modal {
+    position: fixed; /* 画面全体を基準に配置 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    z-index: 100;
+    background-color: #ffffff;
+    max-width: 60vw;
+    max-height: 90vh;
+    overflow: auto;
+    border: solid 1px #BAA899;
+    box-shadow: 3px 3px 3px #d6d6d6;
+}
+
+.modal-content__close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+}
+
+.modal-content__close-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #8B7969;
+    color: #8B7969;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+}
+
+.modal-content__inner {
+    margin: 0px auto;
+    width: 80%;
+}
+
+.modal-table__row {
+    height: auto;
+}
+
+.modal-table__header {
+    padding: 15px 30px 15px 0;
+    color: #8B7969;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.modal-table__text {
+    color: #8B7969;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.modal-content__delete {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.modal-content__delete-button {
+    padding: 5px 15px;
+    border: none;
+    background: #ff3366;
+    color: #fff;
+    cursor: pointer;
+}
