@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AuthRequest;
+use App\Http\Requests\CustomizedRegisterRequest;
 use App\Http\Responses\CustomizedRegisterResponse;
 
 use Illuminate\Auth\Events\Registered;
@@ -53,7 +53,7 @@ class CustomizedRegisterUserController extends Controller
      * @param  \Laravel\Fortify\Contracts\CreatesNewUsers  $creator
      * @return \Laravel\Fortify\Contracts\RegisterResponse
      */
-    public function store(AuthRequest $request,
+    public function store(CustomizedRegisterRequest $request,
                           CreatesNewUsers $creator): RegisterResponse
     {
         if (config('fortify.lowercase_usernames')) {

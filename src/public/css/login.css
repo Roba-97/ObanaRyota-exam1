@@ -61,3 +61,11 @@
     color: #fff;
     cursor: pointer;
 }
+
+.form__group-error {
+    margin: 0 auto;
+    text-align: left;
+    width: 75%;
+    color: #FF9494;
+    font-size: 12px;
+}
