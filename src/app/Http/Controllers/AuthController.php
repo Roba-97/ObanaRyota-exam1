@@ -34,4 +34,19 @@ class AuthController extends Controller
 
         return view('admin', compact('contacts', 'categories'));
     }
+
+    public function modal(Request $request, Contact $contact)
+    {
+        $data = $contact->load('category');
+
+        $contacts = Contact::with('category')->paginate(7);
+        $categories = Category::all();
+
+        return view('admin', compact('contacts', 'categories', 'data'));
+    }
+
+    public function destroy(Contact $contact) {
+        $contact->delete();
+        return redirect('/admin');
+    }
 }
