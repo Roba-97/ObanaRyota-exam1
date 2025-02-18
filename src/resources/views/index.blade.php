@@ -142,10 +142,12 @@
 				<div class="form__group-input">
 					<div class="form__group-input--select">
 						<select name="category_id">
-							<option value="" disabled selected hidden>選択してください</option>
-							@foreach($categories as $category)
-							<option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
-							@endforeach
+  						<option value="" disabled hidden {{ old('category_id') == '' ? 'selected' : '' }}>選択してください</option>
+  						@foreach($categories as $category)
+    					<option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>
+      				{{ $category['content'] }}
+    					</option>
+  						@endforeach
 						</select>
 					</div>
 				</div>

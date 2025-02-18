@@ -90,7 +90,7 @@
 			</table>
 			<div class="form__button">
         <button class="form__button-submit" type="submit">送信</button>
-				<a class="form__button-fix" href="/">修正</a>
+				<a class="form__button-fix" href="/back">修正</a>
       </div>
 		</form>
 	</div>
