@@ -32,7 +32,7 @@ class ContactController extends Controller
       // 作り直した番号とリクエストデータをまとめ、保存できる形に
       unset($contact['tel-1'], $contact['tel-2'], $contact['tel-3']);
       $fixedcontact = $contact + array('tel'=> $tel);
-      
+
       return view('confirm', ['contact' => $fixedcontact, 'category' => $category]);
     }
 

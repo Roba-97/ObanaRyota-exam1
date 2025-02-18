@@ -49,9 +49,13 @@
 }
 
 .modal-table__text {
+    padding: 15px 0px 15px 30px;
     color: #8B7969;
-    padding-left: 30px;
     width: 100%;
+}
+
+.modal-table__header--last, .modal-table__text--last {
+    vertical-align: top;
 }
 
 .modal-content__delete {
@@ -62,7 +66,7 @@
 .modal-content__delete-button {
     padding: 5px 15px;
     border: none;
-    background: #ff3366;
+    background: #BA370D;
     color: #fff;
     cursor: pointer;
 }

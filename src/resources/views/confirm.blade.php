@@ -82,8 +82,8 @@
 				</tr>
 				<tr class="confirm-table__row">
 					<th class="confirm-table__header">お問い合わせの内容</th>
-					<td class="confirm-table__text">
-						{{ $contact['detail'] }}
+					<td class="confirm-table__text confirm-table__text--last">
+						{!! nl2br(e($contact['detail'] )) !!}
 						<input type="hidden" name="detail" value="{{ $contact['detail'] }}"/>
 					</td>
 				</tr>
