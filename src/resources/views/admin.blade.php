@@ -55,7 +55,7 @@
 		<div class="admin-links__export">
 			<form class="admin-links__export-button" action=""><button>エクスポート</button></form>
 		</div>
-		<div class="admin-links__paginate">{{ $contacts->links() }}</div>
+		<div class="admin-links__paginate">{{ $contacts->appends(request()->query())->links() }}</div>
 	</div>
 
 	<div class="admin-tabler">
