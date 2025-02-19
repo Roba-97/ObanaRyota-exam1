@@ -129,6 +129,13 @@
     box-sizing: border-box;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px  #eeeeee inset ;
+    background-color:  #eeeeee;
+    /* 任意で文字色も指定できます */
+    color: #8B7969 ;
+}
+
 .form__button {
     text-align: center;
     margin-top: 20px;
