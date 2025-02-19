@@ -29,9 +29,8 @@ Route::get('/back', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [AuthController::class, 'index']);
     Route::get('/admin/search', [AuthController::class, 'search']);
-    Route::get('/admin/modal/{contact}', [AuthController::class, 'modal']);
+    Route::get('/admin/{modal?}', [AuthController::class, 'index']);
     Route::delete('/admin/delete/{contact}', [AuthController::class, 'destroy']);
 });
 

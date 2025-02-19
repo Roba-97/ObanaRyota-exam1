@@ -10,13 +10,19 @@ use App\Models\Category;
 class AuthController extends Controller
 {
     //
-    public function index()
+    public function index($modal = '')
     {
-        $contacts = Contact::with('category')->paginate(7);        
-        //dd($contacts);
+        $contacts = Contact::with('category')->paginate(7);
         $categories = Category::all();
 
-        return view('admin', compact('contacts', 'categories'));
+        if(!empty($modal)) {
+            $data = Contact::find($modal);
+        }
+        else {
+            $data = null;
+        }
+
+        return view('admin', compact('contacts', 'categories', 'data'));
     }
 
     public function search(Request $request) 
@@ -35,17 +41,8 @@ class AuthController extends Controller
         return view('admin', compact('contacts', 'categories'));
     }
 
-    public function modal(Request $request, Contact $contact)
+    public function destroy(Contact $contact) 
     {
-        $data = $contact->load('category');
-
-        $contacts = Contact::with('category')->paginate(7);
-        $categories = Category::all();
-
-        return view('admin', compact('contacts', 'categories', 'data'));
-    }
-
-    public function destroy(Contact $contact) {
         $contact->delete();
         return redirect('/admin');
     }

@@ -18,29 +18,32 @@
 <div class="admin-content">
 	<div class="admin-search">
 		<form class="admin-search__form" action="/admin/search" method="get">
-			@csrf
 			<div class="admin-search__from-text">
-				<input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
+				<input type="text" name="keyword" value="{{ request('keyword') }}" placeholder="名前やメールアドレスを入力してください">
 			</div>
 			<div class="admin-search__form-select">
-				<select name="gender" >
-					<option value="" disabled selected hidden>性別</option>
-					<option value="0">全て</option>
-					<option value="1">男性</option>
-					<option value="2">女性</option>
-					<option value="3">その他</option>
+				<select name="gender">
+					<option value="" disabled hidden {{ request('gender') == '' ? 'selected' : '' }}>性別</option>
+					<option value="0" {{ request('gender') == '0' ? 'selected' : '' }}>全て</option>
+            		<option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
+            		<option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
+            		<option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
 				</select>
 			</div>
 			<div class="admin-search__form-select">
-				<select name="category_id" >
-					<option value="" disabled selected hidden>お問い合わせの種類</option>
+				<select name="category_id">
+					<option value="" disabled hidden {{ request('category_id') == '' ? 'selected' : '' }}>
+						お問い合わせの種類
+					</option>
 					@foreach($categories as $category)
-					<option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+					<option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                    	{{ $category->content }}
+                	</option>
 					@endforeach
 				</select>
 			</div>
 			<div class="admin-search__form-date">
-				<input type="date" name="date">
+				<input type="date" name="date" value="{{ request('date') }}">
 			</div>
 			<div class="admin-search__form-button">
 				<button  class="admin-search__form-button--submit" type="submit">検索</button>
@@ -87,7 +90,7 @@
 				<td class="admin-table__text">{{ $contact['email'] }}</td>
 				<td class="admin-table__text">{{ $contact->category->content }}</td>
 				<td class="admin-table__text">
-					<form class="detail-button" action="/admin/modal/{{ $contact['id'] }}" method="get">
+					<form class="detail-button" action="/admin/{{ $contact['id'] }}" method="get">
 						<button type="submit">詳細</button>
 					</form>
 				</td>
