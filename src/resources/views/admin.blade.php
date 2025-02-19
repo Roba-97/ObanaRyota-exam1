@@ -144,8 +144,8 @@
 				<td class="modal-table__text">{{ $data->category->content}}</td>
 			</tr>
 			<tr class="modal-table__row">
-				<th class="modal-table__header">お問い合わせの内容</th>
-				<td class="modal-table__text">{{ $data['detail'] }}</td>
+				<th class="modal-table__header modal-table__header--last">お問い合わせの内容</th>
+				<td class="modal-table__text modal-table__text--last">{!! nl2br(e($data['detail'] )) !!}</td>
 			</tr>
 		</table>
 		<form action="/admin/delete/{{ $data['id'] }}" method="post" class="modal-content__delete">

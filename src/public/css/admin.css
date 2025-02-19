@@ -102,14 +102,16 @@
 }
 
 .admin-table__header {
-    padding: 10px 0;
+    padding: 15px 15px 15px 45px;
     background-color: rgba(139, 121, 105, 1);
     color: rgba(255, 255, 255, 1);
+    text-align: left;
 }
 
 .admin-table__text {
-    padding: 15px 0;
+    padding: 15px 15px 15px 45px;
     color: rgba(139, 121, 105, 1);
+    text-align: left;
 }
 
 .detail-button button {

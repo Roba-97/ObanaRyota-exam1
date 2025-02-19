@@ -82,15 +82,15 @@
 				</tr>
 				<tr class="confirm-table__row">
 					<th class="confirm-table__header">お問い合わせの内容</th>
-					<td class="confirm-table__text">
-						{{ $contact['detail'] }}
+					<td class="confirm-table__text confirm-table__text--last">
+						{!! nl2br(e($contact['detail'] )) !!}
 						<input type="hidden" name="detail" value="{{ $contact['detail'] }}"/>
 					</td>
 				</tr>
 			</table>
 			<div class="form__button">
         <button class="form__button-submit" type="submit">送信</button>
-				<a class="form__button-fix" href="/">修正</a>
+				<a class="form__button-fix" href="/back">修正</a>
       </div>
 		</form>
 	</div>

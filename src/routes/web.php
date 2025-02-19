@@ -23,6 +23,11 @@ Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 
+Route::get('/back', function () {
+    $old_input = session()->get('ses');
+    return redirect('/')->withInput($old_input);
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'index']);
     Route::get('/admin/search', [AuthController::class, 'search']);

@@ -24,6 +24,8 @@ class ContactController extends Controller
       $contact = $request->all();
 	    $category = Category::find($request->category_id);
 
+      $request->session()->put('ses', $contact);
+
       // 番号の作り直し
       $tel = $contact['tel-1'].$contact['tel-2'].$contact['tel-3'];
 
