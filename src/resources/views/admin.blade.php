@@ -20,7 +20,7 @@
 		<form class="admin-search__form" action="/admin/search" method="get">
 			@csrf
 			<div class="admin-search__from-text">
-				<input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" size="20">
+				<input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
 			</div>
 			<div class="admin-search__form-select">
 				<select name="gender" >
