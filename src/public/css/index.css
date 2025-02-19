@@ -62,9 +62,11 @@
 .form__group-input--text input {
     width: 95%;
     background-color: #eeeeee;
+    color: #8B7969;
     border: none;
     outline: none;
     line-height: 32px;
+    padding-left: 20px;
 }
 
 .form__group-input--text-two, .form__group-input--text-three {
@@ -76,31 +78,25 @@
 .form__group-input--text-two input {
     width: 47.5%;
     background-color: #eeeeee;
+    color: #8B7969;
     border: none;
     outline: none;
     line-height: 32px;
+    padding-left: 20px;
 }
 
 .form__group-input--text-three input {
     width: 28%;
     background-color: #eeeeee;
+    color: #8B7969;
     border: none;
     outline: none;
     line-height: 32px;
+    text-align: center;
 } 
 
 .form__group-input--text-three span {
     line-height: 32px;
-}
-
-input[type="text"] {
-    padding-left: 20px;
-    color: #8B7969;
-}
-
-input[type="tel"] {
-    text-align: center;
-    color: #8B7969;
 }
 
 .form__group-input--radio input {
@@ -131,10 +127,6 @@ input[type="tel"] {
     border: none;
     outline: none;
     box-sizing: border-box;
-}
-
-.form__group-input--text textarea::placeholder {
-    color: #8B7969;
 }
 
 .form__button {
@@ -171,7 +163,13 @@ input[type="tel"] {
     display: flex;
 }
 
-.form__error-massage--name span {
+.form__error-massage--name span:nth-child(1) {
+    display: block;
+    width: 47.5%;
+    padding-left: 0px;
+}
+
+.form__error-massage--name span:nth-child(2) {
     display: block;
     width: 47.5%;
     padding-left: 20px;

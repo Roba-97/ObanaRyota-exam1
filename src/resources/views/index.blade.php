@@ -35,7 +35,7 @@
         <div class="form__error-void"></div>
 				<div class="form__error-massage">
 					<div class="form__error-massage--name">
-						<span style="padding-left: 0;">
+						<span>
 						@if ($errors->has('last_name'))
 							{{ $errors->first('last_name') }}
 						@endif
