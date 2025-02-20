@@ -59,7 +59,7 @@
 				<form action="/admin/delete/{{ $contact['id'] }}" method="post" class="modal-content__delete-button">
 					@csrf
 					@method('delete')
-					<button wire:click="deleteContact({{ $contact['id'] }})">削除</button>
+					<button type="submit">削除</button>
 				</form>
 			</div>
 		</div>

@@ -15,6 +15,11 @@ class AuthController extends Controller
     //
     public function index()
     {
+        $url = session()->get('url');
+        if(!empty($url)) {
+            session()->forget('url');
+        }
+  
         $contacts = Contact::with('category')->paginate(7);
         $categories = Category::all();
 
@@ -23,6 +28,8 @@ class AuthController extends Controller
 
     public function search(Request $request) 
     {
+        session()->put('url', url()->full());
+
         $contacts = 
         Contact::with('category')
         ->keywordSearch($request->keyword)
@@ -40,7 +47,13 @@ class AuthController extends Controller
     public function destroy(Contact $contact) 
     {
         $contact->delete();
-        return redirect('/admin');
+
+        $url = session()->get('url');
+        if (is_string($url)) {
+            return redirect($url);
+        } else {
+            return redirect('/admin'); // セッションに URL が無いか無効な場合
+        }
     }
 
     public function export(Request $request)
