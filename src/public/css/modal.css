@@ -13,23 +13,26 @@
 }
 
 .modal-content__close {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 20px;
+    position: relative;
+    padding: 20px 0px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.modal-content__close-button {
-    display: inline-block;
+.modal-content__close button {
+    display: flex; /* 中央揃え */
+    align-items: center; /* 縦方向の中央配置 */
+    justify-content: center; /* 横方向の中央配置 */
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: unset;
+    color: #8B7969;
+    border: 1px solid #8B7969;
+    border-radius: 50%;
     width: 30px;
     height: 30px;
-    line-height: 30px;
-    border: 1px solid #8B7969;
-    color: #8B7969;
-    border-radius: 50%;
-    text-decoration: none;
-    text-align: center;
-    font-weight: 400;
+    cursor: pointer;
 }
 
 .modal-content__inner {
@@ -61,9 +64,11 @@
 .modal-content__delete {
     text-align: center;
     margin: 40px 0;
+    background-color: unset;
+    color: unset;
 }
 
-.modal-content__delete-button {
+.modal-content__delete button {
     padding: 5px 15px;
     border: none;
     background: #BA370D;

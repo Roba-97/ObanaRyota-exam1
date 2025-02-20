@@ -13,19 +13,12 @@ use Carbon\Carbon;
 class AuthController extends Controller
 {
     //
-    public function index($modal = '')
+    public function index()
     {
         $contacts = Contact::with('category')->paginate(7);
         $categories = Category::all();
 
-        if(!empty($modal)) {
-            $data = Contact::find($modal);
-        }
-        else {
-            $data = null;
-        }
-
-        return view('admin', compact('contacts', 'categories', 'data'));
+        return view('admin', compact('contacts', 'categories'));
     }
 
     public function search(Request $request) 
