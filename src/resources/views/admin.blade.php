@@ -97,15 +97,17 @@
 				<td class="admin-table__text">{{ $contact['email'] }}</td>
 				<td class="admin-table__text">{{ $contact->category->content }}</td>
 				<td class="admin-table__text">
-					<form class="detail-button" action="/admin/{{ $contact['id'] }}" method="get">
-						<button type="submit">詳細</button>
-					</form>
+					<div class="detail-button">
+						@livewire('modal', ['contact'=> $contact])
+					</div>
 				</td>
 			</tr>
 			@endforeach
 		</table>
 	</div>
 </div>
+
+
 
 @if( $data ?? '')
 <div class="modal">
@@ -166,5 +168,7 @@
 	</div>
 </div>
 @endif
+
+@livewireScripts
 
 @endsection
