@@ -8,6 +8,8 @@ use Illuminate\Http\Response;
 use App\Models\Contact;
 use App\Models\Category;
 
+use Carbon\Carbon;
+
 class AuthController extends Controller
 {
     //
@@ -48,9 +50,25 @@ class AuthController extends Controller
         return redirect('/admin');
     }
 
-    public function export()
+    public function export(Request $request)
     {
-        $contacts = Contact::with('category')->get();
+        $contacts = 
+        Contact::with('category')
+        ->keywordSearch($request->keyword)
+        ->genderSearch($request->gender)
+        ->categorySearch($request->category_id)
+        ->dateSearch($request->date)
+        ->get();
+
+        $count = Contact::count();
+        $now = new Carbon();
+        
+        if ($count === $contacts->count()) {
+            $filename = "お問い合わせ一覧_" . $now->format('Y年m月d日'). ".csv";
+        }
+        else {
+            $filename = "お問い合わせ検索_" . $now->format('Y年m月d日'). ".csv";
+        }
     
         $csvHeader = [
             'ID','姓','名','性別','メールアドレス','電話番号','住所','建物名','お問い合わせの種類','お問い合わせ内容'
@@ -99,6 +117,6 @@ class AuthController extends Controller
 
         return response($csv ,200)
         ->header('Content-Type', 'text/csv')
-        ->header('Content-Disposition', 'attachment; filename="お問い合わせ一覧.csv"');;
+        ->header('Content-Disposition', 'attachment; filename="' . $filename . '"');
     }
 }

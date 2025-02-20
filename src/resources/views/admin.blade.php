@@ -56,7 +56,14 @@
 
 	<div class="admin-links">		
 		<div class="admin-links__export">
-			<form class="admin-links__export-button" action="/admin/export" method="get"><button>エクスポート</button></form>
+			<form class="admin-links__export-button" action="/admin/export" method="post">
+				@csrf
+				<input type="hidden" name="keyword" value="{{ request('keyword') }}">
+				<input type="hidden" name="gender" value="{{ request('gender') }}">
+				<input type="hidden" name="category_id" value="{{ request('category_id') }}">
+				<input type="hidden" name="date" value="{{ request('date') }}">
+				<button>エクスポート</button>
+			</form>
 		</div>
 		<div class="admin-links__paginate">{{ $contacts->appends(request()->query())->links() }}</div>
 	</div>
