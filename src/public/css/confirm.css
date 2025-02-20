@@ -1,0 +1,63 @@
+.about__inner {
+    margin: 15px auto;
+    padding: 15px;
+    max-width: 1230px;
+    text-align: center;
+}
+  
+.about__text {
+    margin: 0 auto;
+    color: #8B7969;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+.confirm-content__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.confirm-table{
+    margin: 0 auto;
+    width: 65%;
+}
+
+.confirm-table__row {
+    border: solid 1px #E0DFDE;
+}
+
+.confirm-table__header {
+    padding: 15px 15px 15px 30px;
+    width: 33%;
+    background-color: #BAA899;
+    color: #FFFFFF;
+    font-weight: normal;
+    text-align: left;
+}
+
+.confirm-table__text {
+    padding: 15px 15px 15px 30px;
+    width: 66%;
+    background-color: #FFFFFF;
+    color: #8B7969;
+}
+
+.form__button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px 30px;
+    height: 40px;
+    border: none;
+    background: #8B7969;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form__button-fix {
+    margin-left: 40px;
+    color: #8B7969;
+}

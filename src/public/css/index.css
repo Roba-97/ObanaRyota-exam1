@@ -1,0 +1,183 @@
+.about__inner {
+    margin: 15px auto;
+    padding: 15px;
+    max-width: 1230px;
+    text-align: center;
+}
+  
+.about__text {
+    margin: 0 auto;
+    color: #8B7969;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+.contact-form__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.form {
+    margin: 0 auto;
+    width: 65%;
+    color: #8B7969;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 40px;
+}
+
+.form__group--first {
+    margin-top: 0px;
+}
+
+.form__group--last {
+    height: auto;
+    align-items: stretch;
+}
+
+.form__group-title--required {
+    margin-left: 5px;
+    color: #FF9494;
+}
+
+.form__group-title {
+    width:33%;
+    line-height: 40px;
+}
+
+.form__group-input {
+    width:66%;
+    line-height: 40px;
+}
+
+.form__group-input--last {
+    width:66%;
+}
+
+.form__group-input--text input {
+    width: 95%;
+    background-color: #eeeeee;
+    color: #8B7969;
+    border: none;
+    outline: none;
+    line-height: 32px;
+    padding-left: 20px;
+}
+
+.form__group-input--text-two, .form__group-input--text-three {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.form__group-input--text-two input {
+    width: 47.5%;
+    background-color: #eeeeee;
+    color: #8B7969;
+    border: none;
+    outline: none;
+    line-height: 32px;
+    padding-left: 20px;
+}
+
+.form__group-input--text-three input {
+    width: 28%;
+    background-color: #eeeeee;
+    color: #8B7969;
+    border: none;
+    outline: none;
+    line-height: 32px;
+    text-align: center;
+} 
+
+.form__group-input--text-three span {
+    line-height: 32px;
+}
+
+.form__group-input--radio input {
+    accent-color: #8B7969;
+}
+
+.form__group-input--radio label{
+    margin-right: 30px;
+    margin-left: 5px;
+}
+
+.form__group-input--select select {
+    padding-left: 20px;
+    width: 50%;
+    color: #8B7969;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+    height: 32px;
+}
+
+.form__group-input--text textarea{
+    margin: 0;
+    padding: 10px 20px;
+    width: 95%;
+    color: #8B7969;
+    background-color: #eeeeee;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px  #eeeeee inset ;
+    background-color:  #eeeeee;
+    /* 任意で文字色も指定できます */
+    color: #8B7969 ;
+}
+
+.form__button {
+    text-align: center;
+    margin-top: 20px;
+}
+  
+.form__button-submit {
+    padding: 10px 20px;
+    height: 40px;
+    border: none;
+    background: #8B7969;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form__error {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__error-void {
+    width:33%;
+}
+
+.form__error-massage {
+    padding-left: 20px;
+    color: #FF9494;
+    width: 66%;
+    font-size: 12px;
+}
+
+.form__error-massage--name {
+    display: flex;
+}
+
+.form__error-massage--name span:nth-child(1) {
+    display: block;
+    width: 47.5%;
+    padding-left: 0px;
+}
+
+.form__error-massage--name span:nth-child(2) {
+    display: block;
+    width: 47.5%;
+    padding-left: 20px;
+}
