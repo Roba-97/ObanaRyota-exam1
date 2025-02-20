@@ -30,6 +30,7 @@ Route::get('/back', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin/search', [AuthController::class, 'search']);
+    Route::post('admin/export', [AuthController::class, 'export']);
     Route::get('/admin/{modal?}', [AuthController::class, 'index']);
     Route::delete('/admin/delete/{contact}', [AuthController::class, 'destroy']);
 });
