@@ -90,6 +90,8 @@ class AuthController extends Controller
                 default:
                     break;
             }
+            // deteilカラム内の改行は半角スペースに→csvでの表示を1行に
+            $detail = str_replace("\n", " ", $contact->detail);
 
             $temp = [
                 $contact->id,
@@ -101,7 +103,7 @@ class AuthController extends Controller
                 $contact->address,
                 $contact->building,
                 $contact->category->content,
-                $contact->detail,
+                $detail,
                 ];
             array_push($temps, $temp);
         }
