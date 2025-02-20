@@ -21,7 +21,7 @@
 - nginx:1.21.1
 
 ## ER図
-![ER図](https://github.com/Roba-97/ObanaRyota-exam1/blob/develop/src/er_graph.drawio.png)
+![ER図](/src/er_graph.drawio.png)
 
 ## URL
 - 開発環境 : 127.0.0.1 (localhost)
