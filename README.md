@@ -3,7 +3,7 @@
 ## 環境構築
 
 ### Docker環境構築(ビルド)
-1. git clone　https://github.com/Roba-97/ObanaRyota-exam1
+1. git clone　git@github.com:Roba-97/ObanaRyota-exam1.git
 2. docker-compose up -d --build
 
 ### Laravel環境構築
@@ -19,7 +19,7 @@
 
 ＊開発環境にアクセスした際に「The stream or file "/var/www/storage/logs/laravel.log" could not be opened in append mode　･･･」<br>
 　のようなエラーが発生した場合は、以下のコマンドでディレクトリ権限を変更した後、キャッシュクリアを実行してみてください
-1. sudo chmod 777 -R src/*
+1. chmod 777 -R src/*
 2. php artisan cache:clear
 3. php artisan config:clear
 4. php artisan config:cache
@@ -35,5 +35,6 @@
 ![ER図](/src/er_graph.drawio.png)
 
 ## URL
-- 開発環境 : 127.0.0.1 (localhost)
-- phpMyAdmin : 127.0.0.1:8080 (localhost:8080)
+- 登録画面 : [http://localhost/](http://localhost/ )
+- 管理画面 : [http://localhost/admin/](http://localhost/admin/)
+- phpMyAdmin :[http://localhost:8080/](http://localhost:8080/)
